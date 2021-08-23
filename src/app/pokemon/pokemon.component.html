@@ -1,0 +1,19 @@
+<header>
+    <h1>Pokedex</h1>
+</header>
+
+<!--The Cards-->
+
+<div class="pokemon-view">
+<div class="container-input">
+  <input type="text" placeholder="search by pokemon name" [(ngModel)]="query">
+</div>
+<div class="grid"  *ngIf="pokemon">
+  <div class="column with-border-image" *ngFor="let item of pokemon  | search: query" [routerLink]="['/detail',item?.name]">
+  <p>{{ item?.id }} - {{ item?.name | titlecase}}</p>
+        <!--<img src = "https://projectpokemon.org/images/normal-sprite/{{item.name}}.gif" alt="Pokemon">-->
+    <img [src] ="item.imageFront" alt="Pokemon">
+<div class="container-item-type bg-{{getPrincipalType(item.types)}}" *ngFor="let type of item.types">{{type.type.name | titlecase}}</div>
+
+</div>
+</div>

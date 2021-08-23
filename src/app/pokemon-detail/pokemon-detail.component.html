@@ -1,0 +1,122 @@
+
+
+<!--Pokemon Logic -->
+<body>
+<div *ngIf="pokemon" class="pokemon-view">
+  <div class="container-pokemon">
+
+    <div class="contaier-title-pokemon">
+
+      <!--Name and ID-->
+
+      <h1 class="pokemon-title">{{ pokemon?.name | titlecase }}
+        <span>{{ (pokemon?.id > 10 ? '#0' : '#00' ) + pokemon?.id }}</span>
+      </h1>
+     <div>
+
+      <!--Images-->
+
+        <img width="100" [src]="pokemon.sprites.front_default">
+        <!--<img src = "https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" alt="Pokemon">-->
+      </div>
+    </div>
+
+    <!--Cards-->
+
+    <div class="container">
+      <div class="card">
+        
+          <h3>Characteristics</h3>
+          <p>Height:<br>
+            <span>{{ pokemon?.height }} Ft</span>
+          </p>
+          <p>Weight:<br>
+            <span>{{ pokemon?.weight }} Lbs</span>
+          </p>
+          <p>Experience:<br>
+            <span>{{ pokemon.base_experience }} </span></p><br>
+          </div>  
+      
+    
+      
+        <div class="card">
+          <h3>Abilities</h3>
+          
+          <div *ngFor="let item of pokemon?.abilities" class="container-abilities">
+            
+           <li>{{ item.ability?.name }}</li>
+           
+          </div>
+        </div>
+      
+      
+        <div class="card">
+          <h3>Moves</h3>
+          <div *ngFor="let item of pokemon.moves | slice:0:20" class="container-item">
+          <li>{{ item.move.name }}</li>
+          </div>
+        </div>
+ </div>
+
+  <div class="card">
+    <h3>Moves</h3>
+  </div>
+</div>
+</div>
+</body>
+
+  
+
+    <!--Pokemon interpolation content
+    Characteristics
+
+    <p>Characteristics</p>
+        <p>Height:<br>
+          <span>{{ pokemon?.height }} Ft</span>
+        </p>
+        <p>Weight:<br>
+          <span>{{ pokemon?.weight }} Lbs</span>
+        </p>
+        <p>Experience:<br>
+          <span>{{ pokemon.base_experience }} </span></p><br>
+
+        Moves
+    <div class="move list">
+    <p>Moves:<br></p>
+    <div *ngFor="let item of pokemon.moves | slice:0:20" class="container-item">
+      
+        <li>{{ item.move.name }}</li>
+      
+    </div>
+    </div>
+
+    Abilities
+
+    
+    <div class="column">
+      <h1 class="title-style-h1">Abilities</h1>
+      <div *ngFor="let item of pokemon?.abilities" class="container-abilities">
+        
+       <ul><li>{{ item.ability?.name }}</li></ul>
+       
+      </div>
+    </div>
+  </div>
+
+  
+
+  <p>Stats:<br></p>
+  <div *ngFor="let poke of pokemon?.stats" class="container-stats">
+    
+      <li>
+        {{ poke?.stat?.name }}<br>
+        <progress max="100" [value]="poke?.base_stat"></progress>
+      </li>
+    
+  </div>-->
+
+ 
+  
+  
+    
+   

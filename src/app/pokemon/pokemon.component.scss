@@ -1,0 +1,108 @@
+@import '../sass/variables', '../sass/mixins';
+
+header
+{
+  padding:20px 0px;
+  text-align: center;
+  background-color: rgb(10, 10, 10);
+  height:50px;
+  }
+
+header h1
+{
+    text-transform: uppercase;
+    color:white;
+    letter-spacing: 3px;
+}
+
+//Poke Cards
+
+.pokemon-view {
+    background-color: #0c0c0c;
+    //background-image: url("../../assets/Images/bck3.jfif");
+    min-height: 100vh;
+    background-repeat: no-repeat; 
+    background-size: cover;
+   
+
+  .container-input {
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 10px;
+      width: 50%;
+  
+     input {
+        margin-top:24px;
+        margin-bottom: 40px;
+        border-radius: 10px;
+        color: $colorFont;
+        border: solid 2px $colorPlayStore;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 15px;
+  
+        &:focus {
+          outline: none;
+        }
+  
+        &::placeholder {
+          opacity: 0.5;
+          font-weight: 400;
+        }
+      }
+    }
+  
+    .grid {
+      max-width: 100%;
+      margin: 0 auto;
+      background-color:transparent;
+      width: 95%;
+      display: grid;
+      grid-auto-rows: 300px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+  
+   .column {
+      text-align: center;
+      color: $colorFont;
+      //border-radius: 10px;
+      cursor: pointer;
+      transition: all .1s ease-in-out;
+      box-shadow: 0px 6px 10px 1px rgba(148, 241, 248, 0.08);
+      height:250px;
+      
+     
+
+   &:focus {
+        outline: none;
+      }
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .with-border-image {
+      border-style: solid;
+      border-radius: 15px;
+      border-width: 10px;
+      border-image-source: url("../../assets/Images/border4.jpg");
+      border-image-slice: 60 30;
+     
+    }
+
+
+   .container-item-type {
+      margin:auto;
+      color: white;
+      border-radius: 10px;
+      border-style:solid;
+      margin-bottom: 8px;
+      width: 100px;
+      text-align: center;
+      
+    }
+   
+  
+}
